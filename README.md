@@ -9,7 +9,7 @@ Require the file and you are done:
 
 ``var extendme = require('/path/to/extendme.js');``
 
-### For browser: (not implement yet)
+### For browser: 
 Simply include the ``extendme.js`` file, it would add ``extendme`` under ``window`` namespace.
 
 Usage:
