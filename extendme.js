@@ -25,7 +25,14 @@
  *  diago.sayHi(); // 'hola!'
  */
 
-(function(exports) {
+(function() {
+  var exports = {};
+  if ( typeof(window) !== 'undefined') {
+    window.extendme = exports;
+  } else {
+    module.exports = exports;
+  }
+
   exports.create = function(seed) {
     var F = function(){};
     F.prototype = seed;
@@ -65,4 +72,4 @@
     } 
     return toReturn;
   };
-})(module.exports);
+})();

@@ -1,5 +1,5 @@
 describe('extendme', function() {
-  var extendme = require(__dirname + '/../extend');
+  var extendme = require(__dirname + '/../extendme');
 
   beforeEach(function() {
     this.addMatchers({
