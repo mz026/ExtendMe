@@ -1,21 +1,28 @@
-var extendme = require(__dirname + '/extend');
+var extendme = require(__dirname + '/extendme');
 
 
 var Person = {
-  type: 'Person'
+    type: 'person'
   , sayHi: function() {
-    console.log('hi');
+    return 'hello, dude';
   }
 };
 
 var person = extendme.create(Person);
-person.sayHi(); // 'hi'
+console.log(person.sayHi()); // 'hello, dude.'
 
-var Spanish = extendme.extend(Person, {
-                sayHi: function() {
-                  console.log('hola!');
-                }
-              });
 
-var diago = extendme.create(Spanish);
-diago.sayHi(); // 'hola!'
+var Ninja = extendme.extend(Person, {
+  type: 'ninja'
+  , weapon: 'sword'
+  , attack: function() {
+    return 'whaaaaa!!!!';
+  }
+});
+var ninja = extendme.create(Ninja);
+
+console.log(ninja.sayHi()); // 'hello dude.'
+console.log(ninja.attack()); // 'whaaaaa!!!'
+console.log(ninja.type); // 'ninja'
+console.log(ninja.weapon); // 'sword'
+
